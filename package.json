@@ -1,0 +1,33 @@
+{
+  "name": "@mbraun/rete-advanced-selection-plugin",
+  "version": "0.0.0",
+  "description": "A plugin for rete.js that should improve the selection-handling",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel ./src --out-dir ./lib",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael-braun/rete-advanced-selection-plugin.git"
+  },
+  "keywords": [
+    "rete",
+    "selection"
+  ],
+  "author": "Michael Braun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michael-braun/rete-advanced-selection-plugin/issues"
+  },
+  "homepage": "https://github.com/michael-braun/rete-advanced-selection-plugin#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6"
+  },
+  "peerDependencies": {
+    "rete": "^1.3.0"
+  }
+}
