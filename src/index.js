@@ -1,6 +1,6 @@
 import install from './install';
 
 export default {
-    name: 'selection-plugin',
+    name: 'advanced-selection-plugin',
     install,
 };
