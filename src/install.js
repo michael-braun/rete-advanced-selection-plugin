@@ -20,6 +20,7 @@ export default function install(editor) {
         updateNodes();
     });
 
+    let preventHandling = false;
     let lastSelectedId = null;
 
     let controlKey = false;
@@ -43,8 +44,19 @@ export default function install(editor) {
     });
 
     editor.on('nodeselect', (node) => {
+        if (preventHandling) {
+            if (lastSelectedId === node.id) {
+                preventHandling = false;
+            }
+
+            return;
+        }
+
         if (!controlKey && editor.selected.contains(node) && lastSelectedId !== node.id) {
             lastSelectedId = node.id;
+
+            preventHandling = true;
+            editor.selectNode(node, true);
 
             return false;
         }
