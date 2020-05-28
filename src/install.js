@@ -43,6 +43,14 @@ export default function install(editor) {
         }
     });
 
+    editor.on('translate', () => {
+        if (controlKey) {
+            return false;
+        }
+
+        return true;
+    });
+
     editor.on('nodeselect', (node) => {
         if (preventHandling) {
             if (lastSelectedId === node.id) {
